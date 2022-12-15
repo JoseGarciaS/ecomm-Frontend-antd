@@ -14,16 +14,18 @@ export default async function getProducts() {
     return response.data;
 }
 
-export async function getOrder(email) {
+export async function getOrder(emails) {
     const options = {
         method: 'GET',
         url: 'http://localhost:3001/order/',
-        data: { email: email },
+        params: { email: emails },
     };
 
     const response = await axios.request(options);
 
-    return response.data;
+    console.log(response.data[0]);
+
+    return response.data[0];
 }
 
 export async function addItemToOrder(email, item) {
@@ -35,7 +37,7 @@ export async function addItemToOrder(email, item) {
 
     const response = await axios.request(options);
 
-    return response.data;
+    return response.data.items;
 }
 
 export async function Login(email, password) {
