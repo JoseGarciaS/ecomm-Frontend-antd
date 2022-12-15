@@ -23,9 +23,9 @@ export async function getOrder(emails) {
 
     const response = await axios.request(options);
 
-    console.log(response.data[0]);
+    console.log('HTTP RESPONSE', response.data);
 
-    return response.data[0];
+    return response.data;
 }
 
 export async function addItemToOrder(email, item) {

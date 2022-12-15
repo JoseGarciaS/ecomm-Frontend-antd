@@ -5,8 +5,8 @@ function OnClick(e) {}
 
 const App = (props) => (
     <List.Item>
-        <Card title={'Cart Item'} style={{ width: '100%', height: 200 }}>
-            <Image src={props.image} width={100} height={100} />
+        <Card title={props.name} style={{ width: '100%', height: 200 }}>
+            <Image src={props.imagePath} width={100} height={100} />
 
             <Typography.Text style={{ marginLeft: 30 }}>
                 Price: {props.price}
