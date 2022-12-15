@@ -4,10 +4,13 @@ import { Typography, Button, Form, Input } from 'antd';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Login } from '../../functions/httpRequests/httpRequests';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../functions/userSlice/userSlice';
 
 const { Text, Link } = Typography;
 
 const App = () => {
+    const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
     const [form, setForm] = useState({});
     const [tokens, setTokens] = useState({});
@@ -27,6 +30,11 @@ const App = () => {
 
         // store accesstoken
         setTokens({ accessToken, refreshToken });
+        if (accessToken != '') {
+            dispatch(setUser(e));
+            console.log('Entramos aqui');
+            console.log(e);
+        }
         console.log(tokens);
 
         // redirect to /home

@@ -14,6 +14,30 @@ export default async function getProducts() {
     return response.data;
 }
 
+export async function getOrder(email) {
+    const options = {
+        method: 'GET',
+        url: 'http://localhost:3001/order/',
+        data: { email: email },
+    };
+
+    const response = await axios.request(options);
+
+    return response.data;
+}
+
+export async function addItemToOrder(email, item) {
+    const options = {
+        method: 'PUT',
+        url: 'http://localhost:3001/order/',
+        data: { email: email, item: item },
+    };
+
+    const response = await axios.request(options);
+
+    return response.data;
+}
+
 export async function Login(email, password) {
     const options = {
         method: 'POST',
