@@ -10,6 +10,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         setCart: (state, email) => {
+            console.log(email);
             state.value = getOrder(email);
         },
     },
