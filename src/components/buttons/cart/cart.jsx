@@ -5,7 +5,7 @@ const { Title, Paragraph, Text, Link } = Typography;
 
 const App = () => (
   <Space wrap>
-    <a href="/">
+    <a href="/cart">
       <Button type="primary">
         <Text style={{ color: "white" }}>
           <ShoppingCartOutlined />

@@ -3,9 +3,6 @@ import { Layout, Menu, theme, Col, Row, Typography, List, Table } from "antd";
 import ProductCard from "../../components/productCard";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { getProducts } from "../../functions/httpRequests/httpRequests";
-
-const { Text, Link } = Typography;
 
 //const App = () => {
 

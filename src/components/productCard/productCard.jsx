@@ -1,6 +1,8 @@
 import React from "react";
-import { Card, Skeleton, Image, Col } from "antd";
+import { Card, Skeleton, Image, Col, Button } from "antd";
 const { Meta } = Card;
+
+function OnClick(e) {}
 
 const App = (props) => (
   <Col>
@@ -24,6 +26,9 @@ const App = (props) => (
       }
     >
       <Meta title={props.name} description={"Price: " + props.price} />
+      <Button onClick={OnClick} style={{ marginTop: 20 }}>
+        Add to cart
+      </Button>
     </Card>
   </Col>
 );
