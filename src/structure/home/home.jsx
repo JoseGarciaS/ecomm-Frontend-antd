@@ -3,8 +3,11 @@ import { Layout, Menu, theme, Col, Row, Typography, List, Table } from 'antd';
 import ProductCard from '../../components/productCard';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Header from '../header';
 
 //const App = () => {
+
+const { Content } = Layout;
 
 function App() {
     const products = useSelector((state) => state.products).value;
@@ -37,11 +40,23 @@ function App() {
     }, [products, query]);
 
     return (
-        <Row wrap="true" gutter="95">
-            {storedProducts.map((product) => (
-                <ProductCard {...product} />
-            ))}
-        </Row>
+        <div>
+            <Header />
+            <Content
+                style={{
+                    marginLeft: '50px',
+                    marginRight: '50px',
+                    marginTop: '50px',
+                    marginBottom: '50px',
+                }}
+            >
+                <Row wrap="true" gutter="95">
+                    {storedProducts.map((product) => (
+                        <ProductCard {...product} />
+                    ))}
+                </Row>
+            </Content>
+        </div>
     );
 }
 export default App;

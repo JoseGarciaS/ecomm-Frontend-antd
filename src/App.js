@@ -1,16 +1,14 @@
-import "./App.css";
-import React from "react";
+import './App.css';
+import React from 'react';
 
-import Header from "./structure/header";
-import Body from "./structure/body";
+import Body from './structure/body';
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <Body />
-    </div>
-  );
+    return (
+        <div>
+            <Body />
+        </div>
+    );
 }
 
 export default App;

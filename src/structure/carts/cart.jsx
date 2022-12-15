@@ -1,15 +1,16 @@
 import React from 'react';
 import { Button, Space, Typography, Form } from 'antd';
-import { AmazonOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-const { Title, Paragraph, Text, Link } = Typography;
+const { Text } = Typography;
 
 const App = () => {
+    const user = useSelector((state) => state.user).value;
     const navigate = useNavigate();
 
     function onFinish(e) {
-        navigate('/');
+        navigate('/cart');
     }
     return (
         <Form
@@ -25,10 +26,11 @@ const App = () => {
                     type="primary"
                     htmlType="submit"
                     className="login-form-button"
-                    icon={<AmazonOutlined spin={true} />}
-                    style={{ width: '100%', height: '100%' }}
                 >
-                    <Text style={{ color: 'white' }}>Bootleg Amazon</Text>
+                    <Text style={{ color: 'white' }}>
+                        <ShoppingCartOutlined />
+                        Cart (-)
+                    </Text>
                 </Button>
             </Space>
         </Form>

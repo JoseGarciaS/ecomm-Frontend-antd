@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getOrder from '../httpRequests/httpRequests';
+import { getOrder } from '../httpRequests/httpRequests';
 
 const initialState = {
     value: getOrder('carlos_unc@unitec.edu'),

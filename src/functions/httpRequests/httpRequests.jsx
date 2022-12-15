@@ -29,7 +29,7 @@ export async function getOrder(email) {
 export async function addItemToOrder(email, item) {
     const options = {
         method: 'PUT',
-        url: 'http://localhost:3001/order/',
+        url: 'http://localhost:3001/order/put',
         data: { email: email, item: item },
     };
 
