@@ -8,10 +8,8 @@ import { getOrder } from '../../functions/httpRequests/httpRequests';
 const { Content } = Layout;
 
 function App(props) {
-    const user = useSelector((state) => state.user).value;
     const cart = useSelector((state) => state.cart).value;
 
-    console.log(user);
     console.log('ORDEN', cart);
     const [storedItems, setItems] = useState([]);
 

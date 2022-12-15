@@ -10,11 +10,14 @@ const { Text } = Typography;
 const App = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user).value;
-    const cart = useSelector((state) => state.cart).value;
     const navigate = useNavigate();
+    const email = user.email;
 
-    function onFinish(e) {
-        dispatch(setCart(cart, user.email));
+    console.log('Aqui deberia venir el user', user);
+
+    function onClick() {
+        console.log('Correo boton', email);
+        dispatch(setCart(email));
         navigate('/cart');
     }
     return (
@@ -24,14 +27,9 @@ const App = () => {
             initialValues={{
                 remember: true,
             }}
-            onFinish={onFinish}
         >
             <Space wrap>
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="login-form-button"
-                >
+                <Button type="primary" onClick={onClick}>
                     <Text style={{ color: 'white' }}>
                         <ShoppingCartOutlined />
                         Cart (-)

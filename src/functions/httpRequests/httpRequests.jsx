@@ -15,6 +15,7 @@ export default async function getProducts() {
 }
 
 export async function getOrder(emails) {
+    console.log('EMAIIIL', emails);
     const options = {
         method: 'GET',
         url: 'http://localhost:3001/order/',
@@ -33,6 +34,18 @@ export async function addItemToOrder(email, item) {
         method: 'PUT',
         url: 'http://localhost:3001/order/put',
         data: { email: email, item: item },
+    };
+
+    const response = await axios.request(options);
+
+    return response.data.items;
+}
+
+export async function deleteItemFromOrder(email, name) {
+    const options = {
+        method: 'DELETE',
+        url: 'http://localhost:3001/order/delete',
+        data: { email: email, name: name },
     };
 
     const response = await axios.request(options);

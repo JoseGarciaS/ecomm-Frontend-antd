@@ -9,9 +9,10 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        setCart: (state, email) => {
-            console.log(email);
-            state.value = getOrder(email);
+        setCart: (state, action) => {
+            console.log('STATE', state);
+            console.log('ACTION', action.payload);
+            state.value = getOrder(action.payload);
         },
     },
 });
