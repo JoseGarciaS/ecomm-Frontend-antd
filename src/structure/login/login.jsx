@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Login } from '../../functions/httpRequests/httpRequests';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../functions/userSlice/userSlice';
+import { setUser } from '../../functions/productSlice copy/userSlice';
 
 const { Text, Link } = Typography;
 
@@ -31,7 +31,8 @@ const App = () => {
         // store accesstoken
         setTokens({ accessToken, refreshToken });
         if (accessToken != '') {
-            dispatch(setUser(e));
+            const tempUser = { ...e, loggedIn: true };
+            dispatch(setUser(tempUser));
             console.log('Entramos aqui');
             console.log(e);
         }

@@ -7,6 +7,7 @@ function App(props) {
     const cart = useSelector((state) => state.cart).value;
     const user = useSelector((state) => state.user).value;
 
+    console.log(user);
     const [storedItems, setItems] = useState([]);
 
     useEffect(() => {
